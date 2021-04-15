@@ -6,15 +6,14 @@
 # NOTE - slide filenames MUST BE VALID PYTHON VARIABLE NAMES
 slide_order = [
     'intro',
-    'graph',
-    'template',
-    'content',
-    'picture',
+    'page1',
+    'page2',
+    'page3',
     'last'
 ]
 
 # the text that appears in the tab
-presentation_title = 'Dash Slides'
+presentation_title = 'What Data Career Is Right For You'
 
 # the text that appears in the previous and next buttons
 prev_text = '<< Previous'

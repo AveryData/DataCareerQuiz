@@ -6,29 +6,28 @@ from app import app
 import dash_core_components as dcc
 from dash.dependencies import Output, Input, State
 
-# custom imports
-# ...
+
+
 
 
 content = html.Div(style=dict(textAlign='center'),children=[
-    html.H1('Intro Slide Title'),
-    html.Button('Click this!',id='intro-button',n_clicks=0),
-    html.H2(id='intro-div'),
 
-    html.Br(),
+    html.Div(style = {'background-image':'url(assets/Intro.png)','height':'680px'}, children=[ 
 
-    html.Div(
-        html.Img(
-            src='https://cdn-images-1.medium.com/max/2600/1*tJGJzsEJJM21-3LT1XZbyw.jpeg',
-            style=dict(height='300px')
-        )
-    )
+      html.Div( children = [
+        html.H1('What Data Career is Right For You?', style={'color':'white'}),
+        html.H3('Take the quiz everyone is talking about!',style={'color':'white','margin-top': 25}),
+        dcc.Input(type='text', placeholder='Full Name',id='name'),
+        html.Br(),
+        dcc.Input(type='email',placeholder='Email',id='email'),
+        html.Br(),
+        html.Button('Take Me To The Quiz!',id='start-button',n_clicks=0,
+          style = {'margin-top': 25})
+      ],style={'margin':'auto','justify':'center','padding': 100})
+
+    ])
+    
+
+    
+
 ])
-
-
-@app.callback(
-    Output('intro-div','children'),
-    [Input('intro-button','n_clicks')]
-)
-def create_template_graph(n):
-    return 'Button has been clicked {} times.'.format(n)
